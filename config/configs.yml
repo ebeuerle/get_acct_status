@@ -1,0 +1,5 @@
+redlock:
+  username: 
+  password: 
+  customer_name: 
+  api_base: api.redlock.io #default value
