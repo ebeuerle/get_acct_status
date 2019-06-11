@@ -13,10 +13,11 @@ class RLSession(object):
 
 
 
-    def __init__(self,userid,userpass,customer_name):
+    def __init__(self,userid,userpass,customer_name,api_base):
 	self.api_id = userid
 	self.api_pass = userpass
 	self.cust_name = customer_name
+        self.api_base_url = api_base
 	self.auth_token = None
 	self.build_client()
 	return None
@@ -48,7 +49,7 @@ class RLSession(object):
     def authenticate_client(self):
 
         success = False
-        prefix = "https://api.redlock.io"
+        prefix = "https://" + self.api_base_url
         endpoint = prefix + "/login"
         body = {"username":self.api_id,"password":self.api_pass,"customerName":self.cust_name}
         max_tries = 5
