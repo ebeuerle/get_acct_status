@@ -1,2 +1,3 @@
 config/configs.yml
 lib/__pycache__/*
+output.csv
