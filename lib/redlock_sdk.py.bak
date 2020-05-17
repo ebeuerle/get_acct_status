@@ -56,7 +56,7 @@ class RLSession(object):
         for _ in range(max_tries):
             token = self.get_auth_token(endpoint, body)
             if token == "BAD":
-                print("Invalid credentials - can not obtain session token.")
+                print "Invalid credentials - can not obtain session token."
             if token is not None:
                 self.auth_token = token
                 success = True

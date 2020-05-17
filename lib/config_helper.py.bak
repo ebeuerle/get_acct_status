@@ -8,10 +8,10 @@ class ConfigHelper(object):
         self.rl_user = config["redlock"]["username"]
         self.rl_pass = config["redlock"]["password"]
         self.rl_cust = config["redlock"]["customer_name"]
-        self.rl_api_base = config["redlock"]["api_base"]
+	self.rl_api_base = config["redlock"]["api_base"]
 
 
     @classmethod
     def read_yml(self, f):
         yml_path = os.path.join(os.path.dirname(__file__), "../config/%s.yml" % f)
-        return yaml.safe_load(open(yml_path, 'r'))
+        return yaml.load(file(yml_path, 'r'))
